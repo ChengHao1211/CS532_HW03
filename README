@@ -1,0 +1,50 @@
+To compile:
+1st make a structure "filetype" to get the exact file type of the file.
+such as directory or regular file.
+
+2nd make a function "findDir" to open the directory and analyze the directory. In the code open the directory by using "opendir" and then use the loop to print all files in the directory. If there's a subdirectory then open the function to analyze the subdirectory in the same way. After analyzing the directory use "closedir" to close the directory. 
+The "e" can use eexecute any command you put follow the "e" command. And I use fork() and wait() to do this.
+The "E" command have to use with "f" command.
+"E" command with tar command can make a tar file. And put all files that list with "f" command inside the tar file.
+
+3rd in the main function use loop and "switch case" to find out which information you are looking for.
+If "e" then eflag becomes 1.Then execute the command "ls -l" on each file (ignore directories). 
+If "f" then fflag becomes 1.Then we can use "E" to make tarfile and put all file listed by "f". 
+
+4th In the makefile I code like this.
+mySearch: yuc_HW2.c
+        gcc -Wall -o search yuc_HW2.c
+	mkdir project
+	mkdir project1
+	mv project1 project
+	touch README
+	mv README project/project1
+        touch project1.docx
+	mv project1.docx project/project1
+	mkdir project2
+	mv project2 project
+	touch README
+	mv README project/project2
+        touch project2.docx
+	mv project1.docx project/project2
+	mkdir project3
+	mv project3 project
+	touch README
+	mv README project/project3
+        touch project3.docx
+	mv project1.docx project/project3
+	mkdir project4
+	mv project4 project
+	touch README
+	mv README project/project4
+        touch project4.docx
+	mv project1.docx project/project4
+yuc_HW2.c is my souce code and use "gcc -Wall -o search yuc_HW2.c" to compile the code. Then use "mkdir project" to make a directory "mkdir project1" to make a sub directory "mv project1 project" to move subdirectory to the main directory
+"touch README" make a README file "mv README project/project1" move the README file to the subdirectory "touch project1.docx" make a docx file "mv project1.docx project/project1" move the docx file to the subdirectory.
+
+
+To run:
+1st use make command to compile my code. After compile the code there's a search.exe file that you can run.
+
+2nd use the "./search" command to analyze the directory.
+
